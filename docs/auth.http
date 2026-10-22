@@ -1,0 +1,37 @@
+# Pruebas manuales de POST /auth (pedir un token)
+# Haz clic en "Send Request" encima de cada petición. La respuesta se abre a la derecha.
+
+@baseUrl = https://restful-booker.herokuapp.com
+
+### 1. Credenciales correctas -> esperamos 200 y un token
+POST {{baseUrl}}/auth
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password123"
+}
+
+### 2. Contraseña incorrecta -> esperamos un error (lo correcto sería 401)
+POST {{baseUrl}}/auth
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "incorrecta"
+}
+
+### 3. Usuario que no existe -> esperamos un error
+POST {{baseUrl}}/auth
+Content-Type: application/json
+
+{
+  "username": "noexiste",
+  "password": "password123"
+}
+
+### 4. Body vacío -> esperamos un error (lo correcto sería 400)
+POST {{baseUrl}}/auth
+Content-Type: application/json
+
+{}
