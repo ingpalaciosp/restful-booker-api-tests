@@ -5,3 +5,4 @@ __pycache__/
 informe.html
 .vscode
 .env
+.ruff_cache/
