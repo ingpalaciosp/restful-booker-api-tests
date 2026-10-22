@@ -23,9 +23,10 @@ Pruebas automatizadas de la API de [Restful-Booker](https://restful-booker.herok
 ## Estructura
 
 ```
+config/              configuración: el único sitio donde se lee el .env (URL y credenciales)
 api/                 clientes de la API: un archivo por endpoint (envían peticiones, no comprueban)
 schemas/             contratos JSON Schema de las respuestas
-data/                datos de prueba (credenciales, leídas del entorno)
+data/                datos de prueba (payloads para crear o modificar reservas)
 tests/               tests automatizados y fixtures (conftest.py)
 casos/               casos de prueba escritos antes de automatizar
 http/                peticiones para probar a mano con la extensión REST Client de VS Code
